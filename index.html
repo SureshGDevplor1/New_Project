@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Page</title>
+</head>
+<body>
+    <label for="keyword">Keyword:</label>
+    <input type="text" id="keyword" name="keyword"><br><br>
+    <label for="job-profile">Job Profile:</label>
+    <input type="text" id="job-profile" name="job-profile"><br><br>
+    <button id="searchBtn">Search</button>
+
+    <script>
+        document.getElementById("searchBtn").addEventListener("click", function() {
+            // Retrieve keyword and job profile values
+            var keyword = document.getElementById("keyword").value;
+            var jobProfile = document.getElementById("job-profile").value;
+
+            // Construct search query
+            var searchQuery = keyword + " " + jobProfile + " email: @gmail.com";
+
+            // Redirect to Google search page with the constructed query
+            window.location.href = "https://www.google.com/search?q=" + encodeURIComponent(searchQuery);
+        });
+    </script>
+</body>
+</html>
